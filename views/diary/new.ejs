@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') -%>
+    <div class="row">
+        <div class="offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+            <h2>新しく日記を追加する</h2>
+            <form action="/diary/<%= currentUser._id%>" method="post" novalidate class="needs-validation">
+                <label for="content" class="form-label d-block">10~200文字の中で入力してね</label>
+                <textarea class="form-control" name="diary[content]" id="content" cols="50" rows="4"
+                minlength="10" maxlength="200" required></textarea>
+                <div class="invalid-feedback">
+                    10文字から200文字の中で入力してね
+                </div>
+                <div class="valid-feedback">
+                    OK!
+                </div>
+                <input class="my-3" type="submit" value="投稿">
+            </form>
+            <a href="/diary">戻る</a>
+        </div>
+    </div>
